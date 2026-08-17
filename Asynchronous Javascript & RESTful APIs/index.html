@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Feather Icons CDN for crisp UI icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <div class="glass-card">
+    <header>
+      <h2>⚡ SkyPulse Pro</h2>
+      <p class="subtitle">Real-time Weather & Atmospheric Analytics</p>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-box">
+      <i data-feather="search" class="search-icon"></i>
+      <input type="text" id="cityInput" placeholder="Search city (e.g., London, Tokyo, New York)..." autocomplete="off" />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Recent Searches -->
+    <div class="recent-container hidden" id="recentContainer">
+      <span class="recent-title">Recent:</span>
+      <div id="recentTags" class="recent-tags"></div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loading" class="loader-container hidden">
+      <div class="spinner"></div>
+      <p>Fetching satellite metrics...</p>
+    </div>
+
+    <!-- Error Banner -->
+    <div id="errorMessage" class="error-banner hidden">
+      <i data-feather="alert-triangle"></i>
+      <span id="errorText"></span>
+    </div>
+
+    <!-- Main Dashboard Metrics -->
+    <div id="weatherDisplay" class="weather-content hidden">
+      <div class="main-info">
+        <div>
+          <h1 id="cityName">--</h1>
+          <p id="weatherState" class="weather-state">--</p>
+        </div>
+        <div class="temp-badge">
+          <span id="temp">--</span>°C
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <i data-feather="droplet"></i>
+          <div>
+            <span class="label">Humidity</span>
+            <span class="value" id="humidity">--</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <i data-feather="wind"></i>
+          <div>
+            <span class="label">Wind Speed</span>
+            <span class="value" id="wind">--</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <i data-feather="compass"></i>
+          <div>
+            <span class="label">Wind Direction</span>
+            <span class="value" id="windDir">--</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <i data-feather="sun"></i>
+          <div>
+            <span class="label">UV Index</span>
+            <span class="value" id="uvIndex">--</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <i data-feather="eye"></i>
+          <div>
+            <span class="label">Visibility</span>
+            <span class="value" id="visibility">--</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <i data-feather="gauge"></i>
+          <div>
+            <span class="label">Pressure</span>
+            <span class="value" id="pressure">--</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
